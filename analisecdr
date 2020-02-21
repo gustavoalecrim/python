@@ -1,0 +1,35 @@
+# coding: utf-8
+
+#Busca específica
+
+exportar = 'não'
+repetir = 'sim'
+while (repetir == 'sim'):
+    
+#Informe qual o arquivo .txt deseja aplicar a busca
+    data = open('CHARGINGCDR4_8_DiameterCreditControlRecord_2.txt','r')
+    print('Insira o MSISDN à ser consultado')
+
+#Conversão do MSISDN para o padrão do CDR
+    MSISDN = input()
+    Diametercallingpaty = '9155'+MSISDN[3]+MSISDN[2]+MSISDN[5]+MSISDN[4]+MSISDN[7]+MSISDN[6]+MSISDN[9]+MSISDN[8]+MSISDN[1]+MSISDN[10]+'f'+MSISDN[12]
+	
+#Busca pelo padrão convertido	
+    for linha in data:
+        linha = linha.rstrip()
+        if Diametercallingpaty in linha:
+            print(linha)
+
+#Exportar o arquivo em txt com o resultado da análise 			
+    print('Deseja exportar para arquivo?')
+    exportar = input()
+    if exportar == 'sim':
+        print('exportando o arquivo resultado de busca.txt')
+        arquivo = open('resultado da analise.txt','w')
+        data = open('CHARGINGCDR4_8_DiameterCreditControlRecord_2.txt','r')
+        for linha in data:
+            if Diametercallingpaty in linha:
+                arquivo.write(linha)
+        arquivo.close()
+    print('Deseja realizar nova busca?')
+    repetir = input()
