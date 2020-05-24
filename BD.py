@@ -1,26 +1,38 @@
-os.chdir('c:/Users/Eleutério Alecrim/Downloads')
-Nomes=[]
+#Determina o diretório
+os.chdir('PATH')
 
-data = open('data.txt')
-print('Qual o seu nome?')
-Nomes.append(input())
-print('Olá')
-print('é um prazer te conhecer')
-print('Quantos anos você tem?')
-anos=[]
-anos.append(input())
-print("Qual o seu bairro?")
-bairro=[]
-bairro.append(input())
-print('Qual a rua?')
-rua=[]
-rua.append(input())
-print('Ok! agora nos conhecemos.')
+#Cria o banco de dados
+Nomes=[]
+data = open('ARQUIVO.txt')
+
+#Cria o primeiro campo
+print('CAMPO1')
+CAMPO1.append(input())
+print('MENSAGEM 1')
+print('MENSAGEM 2')
+
+#Cria o segundo campo
+print('CAMPO2')
+CAMPO2=[]
+CAMPO2.append(input())
+
+#Cria o terceiro campo
+print("CAMPO3")
+CAMPO3=[]
+CAMPO3.append(input())
+
+#Cria o quarto campo
+print('CAMPO4')
+CAMPO4=[]
+CAMPO4.append(input())
+
+#Salva os campos no arquito
+print('MENSAGEM 4')
 data = open("data.txt","w")
-print(Nomes,file=data)
-print(anos,file=data)
-print(bairro,file=data)
-print(rua,file=data)
+print(CAMPO1,file=data)
+print(CAMPO2,file=data)
+print(CAMPO3,file=data)
+print(CAMPO4,file=data)
 data.close()
 
 
